@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Data Feed</string>
+    <string name="action_settings">About</string>
+    <string name="reg_name">Name</string>
+    <string name="reg_username">set username</string>
+    <string name="reg_password">set password</string>
+    <string name="reg_ward">ward</string>
+    <string name="register">Register</string>
+    <string name="But_register">REGISTER</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="phone_no">Phone No.:</string>
+    <string name="e_mail">E-mail :</string>
+    <string name="address">Address:</string>
+    <string name="add">ADD</string>
+    <string name="name">Name:</string>
+    <string name="delete">DELETE</string>
+</resources>
