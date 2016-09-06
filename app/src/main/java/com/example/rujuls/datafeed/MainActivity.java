@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
         //Saving file in external storage
         File sdCard = Environment.getExternalStorageDirectory();
 
-        File directory = new File(sdCard.getAbsolutePath() + "/Rujul;");
+        File directory = new File(sdCard.getAbsolutePath() + "/DataFolder");
         Log.i(TAG, "Path Created");
 
         //create directory if not exist
