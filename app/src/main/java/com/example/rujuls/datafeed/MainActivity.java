@@ -134,11 +134,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void delete(View v){
 
-        String input = e1.getText().toString();
-        d.deleteProduct(input);
-        Cursor cursor = d.fetch();
-        exportToExcel(cursor);
 
+        String input = e1.getText().toString();
+        Long no = Long.parseLong(e2.getText().toString());
+        if (input.matches("")&&no == 0){
+            Toast.makeText(this, "Enter Name/Phone No. to delete related data ", Toast.LENGTH_LONG).show();
+        }
+        else {
+            d.deleteProduct(input, no);
+            Cursor cursor = d.fetch();
+            exportToExcel(cursor);
+            e1.setText("");
+            e2.setText("0");
+            e3.setText("");
+            e4.setText("");
+            Toast.makeText(this, "Data Deleted", Toast.LENGTH_SHORT).show();
+        }
     }
 
 

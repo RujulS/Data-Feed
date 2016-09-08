@@ -51,9 +51,10 @@ import android.util.Log;
         db.close();
     }
 
-    public void deleteProduct(String productName){
+    public void deleteProduct(String productName,Long no){
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_PRODUCTS + " WHERE " + COLUMN_NAME + "=\"" + productName + "\";");
+        db.execSQL("DELETE FROM " + TABLE_PRODUCTS + " WHERE " + COLUMN_PHONE + "=\"" + no + "\";");
     }
 
     public Cursor fetch() {
