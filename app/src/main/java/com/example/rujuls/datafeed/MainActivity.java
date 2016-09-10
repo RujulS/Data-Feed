@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
     DBHandler d ;
 
+    long phone;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,7 +83,12 @@ public class MainActivity extends AppCompatActivity {
     public void addData(View v){
 
         String name = e1.getText().toString();
-        long phone = Long.parseLong(e2.getText().toString());
+        String num = e2.getText().toString();
+
+        //fixed null Long exception
+        if(!num.equals("")) {
+            phone = Long.parseLong(e2.getText().toString());
+        }
         String mail =e3.getText().toString();
         String address =  e4.getText().toString();
 
@@ -92,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "You did not enter a Name", Toast.LENGTH_SHORT).show();
                 return;
 
-            } else if (phone == 0) {
+            } else if (phone == 0){
 
                 Toast.makeText(this, "You did not enter Phone No.", Toast.LENGTH_SHORT).show();
                 return;
@@ -136,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         String input = e1.getText().toString();
-        Long no = Long.parseLong(e2.getText().toString());
+        long no = Long.parseLong(e2.getText().toString());
         if (input.matches("")&&no == 0){
             Toast.makeText(this, "Enter Name/Phone No. to delete related data ", Toast.LENGTH_LONG).show();
         }
